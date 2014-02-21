@@ -1,14 +1,14 @@
 //
-//  NSArray+YSUIKitAdditions.m
-//  YSUIKitAdditionsExample
+//  NSArray+YSNSFoundationAdditions.m
+//  YSNSFoundationAdditionsExample
 //
 //  Created by Yu Sugawara on 2014/02/03.
 //  Copyright (c) 2014年 Yu Sugawara. All rights reserved.
 //
 
-#import "NSArray+YSUIKitAdditions.h"
+#import "NSArray+YSNSFoundationAdditions.h"
 
-@implementation NSArray (YSUIKitAdditions)
+@implementation NSArray (YSNSFoundationAdditions)
 
 - (NSArray *)ys_map:(id (^)(id obj, NSUInteger idx))block
 {

@@ -21,7 +21,7 @@
 		B8C2CE6A18B6CB5700C31CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C2CE4C18B6CB5700C31CC1 /* UIKit.framework */; };
 		B8C2CE7218B6CB5700C31CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8C2CE7018B6CB5700C31CC1 /* InfoPlist.strings */; };
 		B8C2CE7418B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE7318B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m */; };
-		B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSUIKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSUIKitAdditions.m */; };
+		B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,8 @@
 		B8C2CE6F18B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YSNSFoundationAdditionsExampleTests-Info.plist"; sourceTree = "<group>"; };
 		B8C2CE7118B6CB5700C31CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B8C2CE7318B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSNSFoundationAdditionsExampleTests.m; sourceTree = "<group>"; };
-		B8C2CE7E18B6CB8F00C31CC1 /* NSArray+YSUIKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YSUIKitAdditions.h"; sourceTree = "<group>"; };
-		B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSUIKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YSUIKitAdditions.m"; sourceTree = "<group>"; };
+		B8C2CE7E18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
+		B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +159,8 @@
 		B8C2CE7D18B6CB7400C31CC1 /* YSNSFoundationAdditions */ = {
 			isa = PBXGroup;
 			children = (
-				B8C2CE7E18B6CB8F00C31CC1 /* NSArray+YSUIKitAdditions.h */,
-				B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSUIKitAdditions.m */,
+				B8C2CE7E18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.h */,
+				B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */,
 			);
 			name = YSNSFoundationAdditions;
 			path = ../../Classes/YSNSFoundationAdditions;
@@ -264,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C2CE5F18B6CB5700C31CC1 /* ViewController.m in Sources */,
-				B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSUIKitAdditions.m in Sources */,
+				B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE5918B6CB5700C31CC1 /* AppDelegate.m in Sources */,
 				B8C2CE5518B6CB5700C31CC1 /* main.m in Sources */,
 			);
@@ -475,6 +475,7 @@
 				B8C2CE7918B6CB5700C31CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B8C2CE7A18B6CB5700C31CC1 /* Build configuration list for PBXNativeTarget "YSNSFoundationAdditionsExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +484,7 @@
 				B8C2CE7C18B6CB5700C31CC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
