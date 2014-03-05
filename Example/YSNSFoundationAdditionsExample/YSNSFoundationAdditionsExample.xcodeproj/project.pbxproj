@@ -20,9 +20,10 @@
 		B8C2CE6918B6CB5700C31CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C2CE4818B6CB5700C31CC1 /* Foundation.framework */; };
 		B8C2CE6A18B6CB5700C31CC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C2CE4C18B6CB5700C31CC1 /* UIKit.framework */; };
 		B8C2CE7218B6CB5700C31CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8C2CE7018B6CB5700C31CC1 /* InfoPlist.strings */; };
-		B8C2CE7418B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE7318B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m */; };
 		B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */; };
 		B8C2CE8918B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE8818B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m */; };
+		B8F5320118C6F350001769F3 /* NSString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */; };
+		B8F5320318C6F47A001769F3 /* NSStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F5320218C6F47A001769F3 /* NSStringTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +55,13 @@
 		B8C2CE6718B6CB5700C31CC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B8C2CE6F18B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YSNSFoundationAdditionsExampleTests-Info.plist"; sourceTree = "<group>"; };
 		B8C2CE7118B6CB5700C31CC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B8C2CE7318B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSNSFoundationAdditionsExampleTests.m; sourceTree = "<group>"; };
 		B8C2CE7E18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B8C2CE8718B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B8C2CE8818B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
+		B8F531FF18C6F350001769F3 /* NSString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
+		B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
+		B8F5320218C6F47A001769F3 /* NSStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +147,7 @@
 		B8C2CE6D18B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				B8C2CE7318B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m */,
+				B8F5320218C6F47A001769F3 /* NSStringTest.m */,
 				B8C2CE6E18B6CB5700C31CC1 /* Supporting Files */,
 			);
 			path = YSNSFoundationAdditionsExampleTests;
@@ -166,6 +169,8 @@
 				B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */,
 				B8C2CE8718B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.h */,
 				B8C2CE8818B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m */,
+				B8F531FF18C6F350001769F3 /* NSString+YSNSFoundationAdditions.h */,
+				B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */,
 			);
 			name = YSNSFoundationAdditions;
 			path = ../../Classes/YSNSFoundationAdditions;
@@ -269,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8C2CE5F18B6CB5700C31CC1 /* ViewController.m in Sources */,
+				B8F5320118C6F350001769F3 /* NSString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8918B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE5918B6CB5700C31CC1 /* AppDelegate.m in Sources */,
@@ -280,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C2CE7418B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.m in Sources */,
+				B8F5320318C6F47A001769F3 /* NSStringTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

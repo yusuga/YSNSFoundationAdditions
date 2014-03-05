@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "NSString+YSNSFoundationAdditions.h"
 
 @interface NSStringTest : XCTestCase
 
@@ -14,21 +15,32 @@
 
 @implementation NSStringTest
 
-- (void)setUp
+- (void)testIsDegitsOnly
 {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSArray *digitsStrings = @[@"1234",
+                               @"１２３４",
+                               @"12３４",
+                               @"１２34"];
+    
+    for (NSString *str in digitsStrings) {
+        XCTAssertTrue([str ys_isDigitsOnly], @"str = %@", str);
+    }
+    
+    NSArray *notDigitsStrings = @[@"123abc",
+                                  @"abc123",
+                                  @"12a3",
+                                  @"12 3",
+                                  @"1,234",
+                                  @" 123",
+                                  @"123 ",
+                                  @"　123",
+                                  @"123　",
+                                  @"123\n",
+                                  @"123\r\n"];
+    
+    for (NSString *str in notDigitsStrings) {
+        XCTAssertFalse([str ys_isDigitsOnly], @"str = %@", str);
+    }
 }
 
 @end
