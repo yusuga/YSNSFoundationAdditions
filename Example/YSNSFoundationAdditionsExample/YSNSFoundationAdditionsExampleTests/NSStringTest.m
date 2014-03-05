@@ -1,18 +1,18 @@
 //
-//  YSNSFoundationAdditionsExampleTests.m
-//  YSNSFoundationAdditionsExampleTests
+//  NSStringTest.m
+//  YSNSFoundationAdditionsExample
 //
-//  Created by Yu Sugawara on 2014/02/21.
+//  Created by Yu Sugawara on 2014/03/05.
 //  Copyright (c) 2014年 Yu Sugawara. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface YSNSFoundationAdditionsExampleTests : XCTestCase
+@interface NSStringTest : XCTestCase
 
 @end
 
-@implementation YSNSFoundationAdditionsExampleTests
+@implementation NSStringTest
 
 - (void)setUp
 {
