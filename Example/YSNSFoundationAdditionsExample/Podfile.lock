@@ -1,0 +1,14 @@
+PODS:
+  - NSRunLoop-PerformBlock (0.1.1)
+
+DEPENDENCIES:
+  - NSRunLoop-PerformBlock (from `https://github.com/ishkawa/NSRunLoop-PerformBlock.git`)
+
+EXTERNAL SOURCES:
+  NSRunLoop-PerformBlock:
+    :git: https://github.com/ishkawa/NSRunLoop-PerformBlock.git
+
+SPEC CHECKSUMS:
+  NSRunLoop-PerformBlock: 4b81c48d1c88cb7a0f1bf299685a7ca6756f13a9
+
+COCOAPODS: 0.29.0

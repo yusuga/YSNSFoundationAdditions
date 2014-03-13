@@ -1,0 +1,2 @@
+platform :ios, '7.0'
+pod 'NSRunLoop-PerformBlock', :git => 'https://github.com/ishkawa/NSRunLoop-PerformBlock.git'
