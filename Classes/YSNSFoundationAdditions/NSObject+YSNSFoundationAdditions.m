@@ -10,6 +10,10 @@
 
 @implementation NSObject (YSNSFoundationAdditions)
 
+#pragma mark - perform block
+
+/* http://cocoadays.blogspot.jp/2010/08/blocks.html */
+
 - (void)ys_executeBlock:(void (^)(void))block
 {
 	block();
@@ -26,7 +30,5 @@
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(ys_executeBlock:) object:block];
 }
-
-//+ (void)cancelPreviousPerformRequestsWithTarget:(id)aTarget selector:(SEL)aSelector object:(id)anArgument
 
 @end
