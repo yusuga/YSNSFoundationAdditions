@@ -12,4 +12,8 @@
 
 - (BOOL)ys_isDigitsOnly;
 
+/* XML */
+- (NSString *)ys_escapedXMLString;
+- (NSString *)ys_unescapedXMLString;
+
 @end

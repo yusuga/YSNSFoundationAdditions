@@ -7,6 +7,7 @@
 //
 
 #import "NSString+YSNSFoundationAdditions.h"
+#import "NSMutableString+YSNSFoundationAdditions.h"
 
 @implementation NSString (YSNSFoundationAdditions)
 
@@ -20,6 +21,19 @@
         s_notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     });
     return [self rangeOfCharacterFromSet:s_notDigits].location == NSNotFound;
+}
+
+#pragma mark - XML
+
+- (NSString *)ys_escapedXMLString
+{
+    return [self.mutableCopy ys_escapeXML];
+}
+
+
+- (NSString *)ys_unescapedXMLString
+{
+    return [self.mutableCopy ys_unescapeXML];
 }
 
 @end
