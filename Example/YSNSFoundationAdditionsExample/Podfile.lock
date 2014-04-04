@@ -1,8 +1,10 @@
 PODS:
   - NSRunLoop-PerformBlock (0.1.1)
+  - YSProcessTimer (0.0.10)
 
 DEPENDENCIES:
   - NSRunLoop-PerformBlock (from `https://github.com/ishkawa/NSRunLoop-PerformBlock.git`)
+  - YSProcessTimer
 
 EXTERNAL SOURCES:
   NSRunLoop-PerformBlock:
@@ -10,5 +12,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   NSRunLoop-PerformBlock: 4b81c48d1c88cb7a0f1bf299685a7ca6756f13a9
+  YSProcessTimer: a2f0956ee12e5f9af4c211326e8d864a23ddfdb7
 
 COCOAPODS: 0.29.0

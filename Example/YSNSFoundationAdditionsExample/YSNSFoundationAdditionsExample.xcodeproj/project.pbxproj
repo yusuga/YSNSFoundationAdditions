@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */; };
 		B8933A0318D16245006925A7 /* NSObject+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */; };
 		B8933A0518D16347006925A7 /* NSObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8933A0418D16347006925A7 /* NSObjectTest.m */; };
 		B8C2CE4918B6CB5700C31CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C2CE4818B6CB5700C31CC1 /* Foundation.framework */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		A8D8512803A8498E98FFB7CB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B806791818EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
+		B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B8933A0118D16245006925A7 /* NSObject+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B8933A0418D16347006925A7 /* NSObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTest.m; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				B8C2CE8818B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m */,
 				B8F531FF18C6F350001769F3 /* NSString+YSNSFoundationAdditions.h */,
 				B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */,
+				B806791818EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.h */,
+				B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */,
 				B8933A0118D16245006925A7 /* NSObject+YSNSFoundationAdditions.h */,
 				B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */,
 			);
@@ -326,6 +331,7 @@
 				B8933A0318D16245006925A7 /* NSObject+YSNSFoundationAdditions.m in Sources */,
 				B8F5320118C6F350001769F3 /* NSString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */,
+				B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8918B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE5918B6CB5700C31CC1 /* AppDelegate.m in Sources */,
 				B8C2CE5518B6CB5700C31CC1 /* main.m in Sources */,

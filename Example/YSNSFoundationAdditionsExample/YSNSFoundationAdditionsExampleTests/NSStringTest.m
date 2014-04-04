@@ -43,4 +43,40 @@
     }
 }
 
+#pragma mark - XML
+
+- (NSString*)XMLString
+{
+    return @"& ' \" < >";
+}
+
+- (NSString*)escapedXMLString
+{
+    return @"&amp; &apos; &quot; &lt; &gt;";
+}
+
+- (void)testEscapeXMLString
+{
+    XCTAssertTrue([[[self XMLString] ys_escapedXMLString] isEqualToString:[self escapedXMLString]],
+                  @"str1: %@, str2: %@", [[self XMLString] ys_escapedXMLString], [self escapedXMLString]);
+    
+    XCTAssertFalse([[[self XMLString] ys_escapedXMLString] isEqualToString:[self XMLString]],
+                   @"str1: %@, str2: %@", [[self XMLString] ys_escapedXMLString], [self XMLString]);
+    
+    XCTAssertTrue([[@"" ys_escapedXMLString] isEqualToString:@""],
+                  @"str1: %@", [@"" ys_escapedXMLString]);
+}
+
+- (void)testUnescapeXMLString
+{
+    XCTAssertTrue([[self XMLString] isEqualToString:[[self escapedXMLString] ys_unescapedXMLString]],
+                  @"str1: %@, str2: %@", [self XMLString], [[self escapedXMLString] ys_unescapedXMLString]);
+    
+    XCTAssertFalse([[self escapedXMLString] isEqualToString:[[self escapedXMLString] ys_unescapedXMLString]],
+                   @"str1: %@, str2: %@", [self escapedXMLString], [[self escapedXMLString] ys_unescapedXMLString]);
+    
+    XCTAssertTrue([[[@"" ys_escapedXMLString] ys_unescapedXMLString] isEqualToString:@""],
+                  @"str1: %@", [[@"" ys_escapedXMLString] ys_unescapedXMLString]);
+}
+
 @end
