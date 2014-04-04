@@ -16,4 +16,8 @@
 - (NSString *)ys_escapedXMLString;
 - (NSString *)ys_unescapedXMLString;
 
+/* URL */
+- (NSString*)ys_escapedURLString;
+- (NSString*)ys_unescapedURLString;
+
 @end

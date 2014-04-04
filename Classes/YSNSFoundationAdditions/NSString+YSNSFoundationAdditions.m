@@ -36,4 +36,23 @@
     return [self.mutableCopy ys_unescapeXML];
 }
 
+#pragma mark - URL
+
+- (NSString*)ys_escapedURLString
+{
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                 (CFStringRef)self,
+                                                                                 NULL,
+                                                                                 (CFStringRef)@"!*'();:@&=+$,/?%#[]._-",
+                                                                                 kCFStringEncodingUTF8));
+}
+
+- (NSString*)ys_unescapedURLString
+{
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL,
+                                                                                                 (CFStringRef)self,
+                                                                                                 CFSTR(""),
+                                                                                                 kCFStringEncodingUTF8));
+}
+
 @end
