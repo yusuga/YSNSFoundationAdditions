@@ -25,6 +25,9 @@
 		B8C2CE7218B6CB5700C31CC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B8C2CE7018B6CB5700C31CC1 /* InfoPlist.strings */; };
 		B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */; };
 		B8C2CE8918B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE8818B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m */; };
+		B8F0F1551994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F0F1541994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.m */; };
+		B8F0F1581994F64E003CF655 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F0F1571994F64E003CF655 /* Tweet.m */; };
+		B8F0F15A1994F696003CF655 /* NSManagedObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F0F1591994F696003CF655 /* NSManagedObjectTest.m */; };
 		B8F5320118C6F350001769F3 /* NSString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */; };
 		B8F5320318C6F47A001769F3 /* NSStringTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F5320218C6F47A001769F3 /* NSStringTest.m */; };
 		EA7814E7D4EC45A1AC5C5B67 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED256ECA463C4DE186F47B4C /* libPods.a */; };
@@ -69,6 +72,11 @@
 		B8C2CE7F18B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B8C2CE8718B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B8C2CE8818B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
+		B8F0F1531994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
+		B8F0F1541994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
+		B8F0F1561994F64E003CF655 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		B8F0F1571994F64E003CF655 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		B8F0F1591994F696003CF655 /* NSManagedObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSManagedObjectTest.m; sourceTree = "<group>"; };
 		B8F531FF18C6F350001769F3 /* NSString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B8F5320218C6F47A001769F3 /* NSStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTest.m; sourceTree = "<group>"; };
@@ -141,6 +149,8 @@
 				B8C2CE5A18B6CB5700C31CC1 /* Main.storyboard */,
 				B8C2CE5D18B6CB5700C31CC1 /* ViewController.h */,
 				B8C2CE5E18B6CB5700C31CC1 /* ViewController.m */,
+				B8F0F1561994F64E003CF655 /* Tweet.h */,
+				B8F0F1571994F64E003CF655 /* Tweet.m */,
 				B8C2CE6018B6CB5700C31CC1 /* Images.xcassets */,
 				B8C2CE4F18B6CB5700C31CC1 /* Supporting Files */,
 			);
@@ -161,6 +171,7 @@
 		B8C2CE6D18B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				B8F0F1591994F696003CF655 /* NSManagedObjectTest.m */,
 				B8933A0418D16347006925A7 /* NSObjectTest.m */,
 				B8F5320218C6F47A001769F3 /* NSStringTest.m */,
 				B8C2CE6E18B6CB5700C31CC1 /* Supporting Files */,
@@ -190,6 +201,8 @@
 				B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */,
 				B8933A0118D16245006925A7 /* NSObject+YSNSFoundationAdditions.h */,
 				B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */,
+				B8F0F1531994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.h */,
+				B8F0F1541994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.m */,
 			);
 			name = YSNSFoundationAdditions;
 			path = ../../Classes/YSNSFoundationAdditions;
@@ -241,7 +254,7 @@
 		B8C2CE3D18B6CB5700C31CC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Yu Sugawara";
 				TargetAttributes = {
 					B8C2CE6518B6CB5700C31CC1 = {
@@ -334,7 +347,9 @@
 				B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8918B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE5918B6CB5700C31CC1 /* AppDelegate.m in Sources */,
+				B8F0F1581994F64E003CF655 /* Tweet.m in Sources */,
 				B8C2CE5518B6CB5700C31CC1 /* main.m in Sources */,
+				B8F0F1551994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F5320318C6F47A001769F3 /* NSStringTest.m in Sources */,
+				B8F0F15A1994F696003CF655 /* NSManagedObjectTest.m in Sources */,
 				B8933A0518D16347006925A7 /* NSObjectTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +405,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -428,7 +443,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -488,7 +502,6 @@
 		B8C2CE7B18B6CB5700C31CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YSNSFoundationAdditionsExample.app/YSNSFoundationAdditionsExample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -516,7 +529,6 @@
 		B8C2CE7C18B6CB5700C31CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YSNSFoundationAdditionsExample.app/YSNSFoundationAdditionsExample";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

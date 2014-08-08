@@ -1,0 +1,23 @@
+//
+//  NSManagedObject+YSNSFoundationAdditions.m
+//  YSNSFoundationAdditionsExample
+//
+//  Created by Yu Sugawara on 2014/08/08.
+//  Copyright (c) 2014年 Yu Sugawara. All rights reserved.
+//
+
+#import "NSManagedObject+YSNSFoundationAdditions.h"
+
+@implementation NSManagedObject (YSNSFoundationAdditions)
+
++ (NSString*)ys_entityName
+{
+    return NSStringFromClass([self class]);
+}
+
+- (NSString*)ys_entityName
+{
+    return NSStringFromClass([self class]);
+}
+
+@end
