@@ -20,7 +20,7 @@
     dispatch_once(&onceToken, ^{
         s_notDigits = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
     });
-    return [self rangeOfCharacterFromSet:s_notDigits].location == NSNotFound;
+    return self.length && [self rangeOfCharacterFromSet:s_notDigits].location == NSNotFound;
 }
 
 #pragma mark - XML

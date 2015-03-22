@@ -36,7 +36,8 @@
                                   @"　123",
                                   @"123　",
                                   @"123\n",
-                                  @"123\r\n"];
+                                  @"123\r\n",
+                                  @""];
     
     for (NSString *str in notDigitsStrings) {
         XCTAssertFalse([str ys_isDigitsOnly], @"str = %@", str);
