@@ -12,4 +12,6 @@
 
 - (NSArray *)ys_map:(id (^)(id obj, NSUInteger idx))block;
 
+- (id)ys_randomObject;
+
 @end

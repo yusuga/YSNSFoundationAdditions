@@ -22,4 +22,12 @@
     return [NSArray arrayWithArray:array];
 }
 
+- (id)ys_randomObject
+{
+    if ([self count] == 0) return nil;
+    
+    NSUInteger idx = [self count] > UINT32_MAX ? arc4random_uniform(UINT32_MAX) : arc4random_uniform((u_int32_t)[self count]);
+    return self[idx];
+}
+
 @end

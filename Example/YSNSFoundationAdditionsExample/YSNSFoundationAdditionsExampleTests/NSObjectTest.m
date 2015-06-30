@@ -78,7 +78,7 @@
 
 - (void)testPerformBlockCancel
 {
-    __block BOOL finished1;
+    __block BOOL finished1 = NO;
     [[NSRunLoop currentRunLoop] performBlockAndWait:^(BOOL *finish) {
         void(^block)(void) = ^{
             NSLog(@"%s", __func__);
@@ -89,14 +89,12 @@
         [self ys_cancelPreviousPerformBlockWithBlock:block];
     } timeoutInterval:1.];
     
-    if (finished1) {
-        XCTAssert(0, @"Not cancel perform block");
-    }
+    XCTAssertFalse(finished1, @"Not cancel perform block");
 }
 
 - (void)testPerformBlockDefaultCancel
 {
-    __block BOOL finished1;
+    __block BOOL finished1 = NO;
     [[NSRunLoop currentRunLoop] performBlockAndWait:^(BOOL *finish) {
         void(^block)(void) = ^{
             NSLog(@"%s", __func__);
@@ -107,9 +105,7 @@
         [NSObject cancelPreviousPerformRequestsWithTarget:self];
     } timeoutInterval:1.];
     
-    if (finished1) {
-        XCTAssert(0, @"Not cancel perform block");
-    }
+    XCTAssertFalse(finished1, @"Not cancel perform block");
 }
 
 @end
