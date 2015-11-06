@@ -28,7 +28,9 @@
 
 - (void)ys_cancelPreviousPerformBlockWithBlock:(id)block
 {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(ys_executeBlock:) object:block];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self
+                                             selector:@selector(ys_executeBlock:)
+                                               object:[block copy]];
 }
 
 @end

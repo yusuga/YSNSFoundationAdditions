@@ -27,13 +27,13 @@
 
 - (NSString *)ys_escapedXMLString
 {
-    return [self.mutableCopy ys_escapeXML];
+    return [[self.mutableCopy ys_escapeXML] copy];
 }
 
 
 - (NSString *)ys_unescapedXMLString
 {
-    return [self.mutableCopy ys_unescapeXML];
+    return [[self.mutableCopy ys_unescapeXML] copy];
 }
 
 #pragma mark - URL

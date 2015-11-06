@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */; };
 		B86A1BA61B425BFE00216301 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B86A1BA51B425BFE00216301 /* NSArrayTests.m */; };
+		B883AB7B1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B883AB7A1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m */; };
+		B883AB801BEC754000EF6460 /* NSMutableAttributedStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B883AB7F1BEC754000EF6460 /* NSMutableAttributedStringTests.m */; };
 		B8933A0318D16245006925A7 /* NSObject+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */; };
 		B8933A0518D16347006925A7 /* NSObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B8933A0418D16347006925A7 /* NSObjectTest.m */; };
 		B8C2CE4918B6CB5700C31CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C2CE4818B6CB5700C31CC1 /* Foundation.framework */; };
@@ -45,10 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A8D8512803A8498E98FFB7CB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		0224D326A7156FF2252C961F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B806791818EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B86A1BA51B425BFE00216301 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTests.m; sourceTree = "<group>"; };
+		B883AB791BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
+		B883AB7A1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
+		B883AB7F1BEC754000EF6460 /* NSMutableAttributedStringTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableAttributedStringTests.m; sourceTree = "<group>"; };
 		B8933A0118D16245006925A7 /* NSObject+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B8933A0418D16347006925A7 /* NSObjectTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectTest.m; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 		B8F531FF18C6F350001769F3 /* NSString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B8F5320218C6F47A001769F3 /* NSStringTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTest.m; sourceTree = "<group>"; };
+		DDFA9308F2ED58F9E4704D03 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ED256ECA463C4DE186F47B4C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6BF7D35794D29EAC0C88E38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDFA9308F2ED58F9E4704D03 /* Pods.debug.xcconfig */,
+				0224D326A7156FF2252C961F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B8C2CE3C18B6CB5700C31CC1 = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +133,7 @@
 				B8C2CE6D18B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests */,
 				B8C2CE4718B6CB5700C31CC1 /* Frameworks */,
 				B8C2CE4618B6CB5700C31CC1 /* Products */,
-				A8D8512803A8498E98FFB7CB /* Pods.xcconfig */,
+				B6BF7D35794D29EAC0C88E38 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +191,7 @@
 				B8F0F1591994F696003CF655 /* NSManagedObjectTest.m */,
 				B8933A0418D16347006925A7 /* NSObjectTest.m */,
 				B8F5320218C6F47A001769F3 /* NSStringTest.m */,
+				B883AB7F1BEC754000EF6460 /* NSMutableAttributedStringTests.m */,
 				B86A1BA51B425BFE00216301 /* NSArrayTests.m */,
 				B8C2CE6E18B6CB5700C31CC1 /* Supporting Files */,
 			);
@@ -202,6 +218,8 @@
 				B8F5320018C6F350001769F3 /* NSString+YSNSFoundationAdditions.m */,
 				B806791818EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.h */,
 				B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */,
+				B883AB791BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.h */,
+				B883AB7A1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m */,
 				B8933A0118D16245006925A7 /* NSObject+YSNSFoundationAdditions.h */,
 				B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */,
 				B8F0F1531994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.h */,
@@ -223,6 +241,7 @@
 				B8C2CE4218B6CB5700C31CC1 /* Frameworks */,
 				B8C2CE4318B6CB5700C31CC1 /* Resources */,
 				92DD63D6BC35469AAE45CFF9 /* Copy Pods Resources */,
+				3965595B32E46A060C4F98F8 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,7 +276,7 @@
 		B8C2CE3D18B6CB5700C31CC1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Yu Sugawara";
 				TargetAttributes = {
 					B8C2CE6518B6CB5700C31CC1 = {
@@ -306,6 +325,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3965595B32E46A060C4F98F8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6188FE73DD704143AF52201A /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -333,7 +367,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -347,6 +381,7 @@
 				B8933A0318D16245006925A7 /* NSObject+YSNSFoundationAdditions.m in Sources */,
 				B8F5320118C6F350001769F3 /* NSString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */,
+				B883AB7B1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m in Sources */,
 				B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8918B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE5918B6CB5700C31CC1 /* AppDelegate.m in Sources */,
@@ -364,6 +399,7 @@
 				B8F5320318C6F47A001769F3 /* NSStringTest.m in Sources */,
 				B8F0F15A1994F696003CF655 /* NSManagedObjectTest.m in Sources */,
 				B8933A0518D16347006925A7 /* NSObjectTest.m in Sources */,
+				B883AB801BEC754000EF6460 /* NSMutableAttributedStringTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +459,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -477,13 +514,14 @@
 		};
 		B8C2CE7818B6CB5700C31CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8D8512803A8498E98FFB7CB /* Pods.xcconfig */;
+			baseConfigurationReference = DDFA9308F2ED58F9E4704D03 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YSNSFoundationAdditionsExample/YSNSFoundationAdditionsExample-Prefix.pch";
 				INFOPLIST_FILE = "YSNSFoundationAdditionsExample/YSNSFoundationAdditionsExample-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.YuSugawara.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -491,13 +529,14 @@
 		};
 		B8C2CE7918B6CB5700C31CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8D8512803A8498E98FFB7CB /* Pods.xcconfig */;
+			baseConfigurationReference = 0224D326A7156FF2252C961F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YSNSFoundationAdditionsExample/YSNSFoundationAdditionsExample-Prefix.pch";
 				INFOPLIST_FILE = "YSNSFoundationAdditionsExample/YSNSFoundationAdditionsExample-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.YuSugawara.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -521,9 +560,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"${SRCROOT}/Pods/Headers",
+					"${SRCROOT}/Pods/Headers/**",
 				);
 				INFOPLIST_FILE = "YSNSFoundationAdditionsExampleTests/YSNSFoundationAdditionsExampleTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.YuSugawara.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -544,9 +584,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"${SRCROOT}/Pods/Headers",
+					"${SRCROOT}/Pods/Headers/**",
 				);
 				INFOPLIST_FILE = "YSNSFoundationAdditionsExampleTests/YSNSFoundationAdditionsExampleTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.YuSugawara.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

@@ -8,8 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "NSObject+YSNSFoundationAdditions.h"
-
-#import <NSRunLoop-PerformBlock/NSRunLoop+PerformBlock.h>
+#import <NSRunLoop+PerformBlock/NSRunLoop+PerformBlock.h>
 
 @interface NSObjectTest : XCTestCase
 
@@ -84,10 +83,21 @@
             NSLog(@"%s", __func__);
             finished1 = YES;
         };
-        [self ys_performBlock:block afterDelay:0.5];
+        [self ys_performBlock:block afterDelay:3.];
         
-        [self ys_cancelPreviousPerformBlockWithBlock:block];
-    } timeoutInterval:1.];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [NSThread sleepForTimeInterval:1.];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self ys_cancelPreviousPerformBlockWithBlock:block];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [NSThread sleepForTimeInterval:3.];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        *finish = YES;
+                    });
+                });
+            });
+        });
+    } timeoutInterval:5.];
     
     XCTAssertFalse(finished1, @"Not cancel perform block");
 }
@@ -100,10 +110,21 @@
             NSLog(@"%s", __func__);
             finished1 = YES;
         };
-        [self ys_performBlock:block afterDelay:0.5];
+        [self ys_performBlock:block afterDelay:3.];
         
-        [NSObject cancelPreviousPerformRequestsWithTarget:self];
-    } timeoutInterval:1.];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [NSThread sleepForTimeInterval:1.];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [NSObject cancelPreviousPerformRequestsWithTarget:self];
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [NSThread sleepForTimeInterval:3.];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        *finish = YES;
+                    });
+                });
+            });
+        });
+    } timeoutInterval:5.];
     
     XCTAssertFalse(finished1, @"Not cancel perform block");
 }
