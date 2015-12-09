@@ -20,4 +20,9 @@
 - (NSString*)ys_escapedURLString;
 - (NSString*)ys_unescapedURLString;
 
+/* Regular Expression */
+- (NSArray<NSTextCheckingResult *> *)ys_findHTTPURIRFC3986Matches;
+- (NSArray<NSValue *> *)ys_findTwitterHashtagRanges;
+- (NSArray<NSValue *> *)ys_findTwitterMentionRanges;
+
 @end

@@ -117,4 +117,143 @@
                   @"str1: %@", [[@"" ys_escapedURLString] ys_unescapedURLString]);
 }
 
+#pragma mark - Regular Expression
+
+- (void)testFindHTTPURIRFC3986Matches
+{
+    void (^test)(NSString *source, NSArray<NSValue *> *answerRanges) = ^(NSString *source, NSArray<NSValue *> *answerRanges) {
+        NSArray<NSTextCheckingResult *> *matches = [source ys_findHTTPURIRFC3986Matches];
+        XCTAssertEqual([matches count], [answerRanges count]);
+        
+        NSLog(@"source: %@", source);
+        [matches enumerateObjectsUsingBlock:^(NSTextCheckingResult * _Nonnull match, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSRange range = match.range;
+            XCTAssertTrue(NSEqualRanges(range, [answerRanges[idx] rangeValue]), @">%zd: answerRange: %@, resultRange:%@, [%@]", idx, NSStringFromRange([answerRanges[idx] rangeValue]), NSStringFromRange(range), [source substringWithRange:range]);
+            NSLog(@">%zd: %@, [%@]", idx, NSStringFromRange(range), [source substringWithRange:range]);
+        }];
+    };
+    
+    test(@"", nil);
+    test(@"http", nil);
+    test(@"http:", nil);
+    test(@"http:/", nil);
+    test(@"http://", nil);
+    
+    test(@"http://a", @[[NSValue valueWithRange:NSMakeRange(0, 8)]]);
+    
+    test(@"http://google.com", @[[NSValue valueWithRange:NSMakeRange(0, 17)]]);
+    test(@"HTTP://GOOGLE.COM", @[[NSValue valueWithRange:NSMakeRange(0, 17)]]);
+    test(@"abc http://google.com", @[[NSValue valueWithRange:NSMakeRange(4, 17)]]);
+    test(@"http://google.com http://apple.com", @[[NSValue valueWithRange:NSMakeRange(0, 17)], [NSValue valueWithRange:NSMakeRange(18, 16)]]);
+    
+    test(@"Along with our new #Twitterbird, we've also updated our Display Guidelines: https://dev.twitter.com/terms/display-guidelines  ^JC", @[[NSValue valueWithRange:NSMakeRange(76, 48)]]);
+    test(@"URL tests. https://google.com  query: https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwilsdqgisrJAhVDrJQKHSiDBS4QFggoMAA&url=http%3A%2F%2Fwww.apple.com%2Fjp%2F&usg=AFQjCNEru1CMn0qABV7TjifNMEOJSUftNg escaped: https://www.google.co.jp/maps/search/%E6%9D%B1%E4%BA%AC+%E5%85%AC%E5%9C%92/@35.6852483,139.7177802,13z/data=!3m1!4b1", @[[NSValue valueWithRange:NSMakeRange(11, 18)], [NSValue valueWithRange:NSMakeRange(38, 203)], [NSValue valueWithRange:NSMakeRange(251, 116)]]);
+}
+
+- (void)testFindHashttagRanges
+{
+    NSArray<NSString *> *sources = @[@"#hashtag",
+                                     @"#head apple",                                // 先頭
+                                     @"apple #end",                                 // 末尾
+                                     @"text\n#lineBreaks\ntext",                    // 改行
+                                     @"# apple #ingnoreSingelSharp # apple #",      // #のみ
+                                     @"##apple",                                    // 連続
+                                     @"apple ＃fullWidth apple",                     // 全角#
+                                     @"apple #key,word #key-word #key!word,#key",   // 記号
+                                     @"http://google.com#abc #ignoreSharpInURL",    // URL
+                                     @"#CASEINSENSITIVE apple apple",               // CaseInsensitive
+                                     @"apple #日本語 apple",                          // 日本語
+                                     @"apple #mix日本語とenglish apple",              // 混合
+                                     ];
+    NSArray<NSString *> *answers = @[@"#hashtag",
+                                     @"#head",
+                                     @"#end",
+                                     @"#lineBreaks",
+                                     @"#ingnoreSingelSharp",
+                                     @"#apple",
+                                     @"＃fullWidth",
+                                     @"#key",
+                                     @"#ignoreSharpInURL",
+                                     @"#CASEINSENSITIVE",
+                                     @"#日本語",
+                                     @"#mix日本語とenglish",
+                                     ];
+    XCTAssertEqual([sources count], [answers count]);
+    
+    XCTAssertEqual([[@"" ys_findTwitterHashtagRanges] count], 0);
+    
+    [sources enumerateObjectsUsingBlock:^(NSString * _Nonnull source, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray<NSValue *> *ranges = [source ys_findTwitterHashtagRanges];
+        XCTAssertGreaterThan([ranges count], 0, @"{\n\tsource = %@\n}", source);
+        
+        NSMutableString *result = [NSString stringWithFormat:@"{\n\tsource = %@", source].mutableCopy;
+        NSString *answer = answers[idx];
+        
+        [ranges enumerateObjectsUsingBlock:^(NSValue * _Nonnull rangeValue, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSRange range = [rangeValue rangeValue];
+            NSString *matchedText = [source substringWithRange:range];
+            XCTAssertEqualObjects(matchedText, answer);
+            [result appendFormat:@"\n\trange[%zd] = %@, found = %@", idx, NSStringFromRange(range), matchedText];
+        }];
+        [result appendString:@"\n}"];
+        
+        NSLog(@"\n%@", result);
+    }];
+}
+
+- (void)testFindMentionRanges
+{
+    NSArray<NSString *> *sources = @[@"@mention",
+                                     @"@head apple",                                // 先頭
+                                     @"apple @end",                                 // 末尾
+                                     @"@ apple @ingnoreAtsign @ apple @",           // @のみ
+                                     @"@@apple",                                    // @が連続
+                                     @"apple @key,word @key-word @key!word,@key",   // ignore記号
+                                     @"apple @_underscores",                        // _
+                                     @"apple @under_scores",                        // _
+                                     @"apple @underscores_",                        // _
+                                     @"apple @1234",                                // number
+                                     @"@CASEINSENSITIVE apple apple",               // CaseInsensitive
+                                     @"apple @日本語 @ignoreMultibyte",               // 日本語
+                                     @"apple @mix123_abc apple",                    // 混合
+                                     ];
+    NSArray<NSString *> *answers = @[@"@mention",
+                                     @"@head",
+                                     @"@end",
+                                     @"@ingnoreAtsign",
+                                     @"@apple",
+                                     @"@key",
+                                     @"@_underscores",
+                                     @"@under_scores",
+                                     @"@underscores_",
+                                     @"@1234",
+                                     @"@CASEINSENSITIVE",
+                                     @"@ignoreMultibyte",
+                                     @"@mix123_abc",
+                                     ];
+    XCTAssertEqual([sources count], [answers count]);
+    
+    XCTAssertEqual([[@"" ys_findTwitterMentionRanges] count], 0);
+    XCTAssertEqual([[@"@123456789012345" ys_findTwitterMentionRanges] count], 1);
+    XCTAssertEqual([[@"@1234567890123456" ys_findTwitterMentionRanges] count], 0);
+    
+    [sources enumerateObjectsUsingBlock:^(NSString * _Nonnull source, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray<NSValue *> *ranges = [source ys_findTwitterMentionRanges];
+        XCTAssertGreaterThan([ranges count], 0, @"{\n\tsource = %@\n}", source);
+        
+        NSMutableString *result = [NSString stringWithFormat:@"{\n\tsource = %@", source].mutableCopy;
+        NSString *answer = answers[idx];
+        
+        [ranges enumerateObjectsUsingBlock:^(NSValue * _Nonnull rangeValue, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSRange range = [rangeValue rangeValue];
+            NSString *matchedText = [source substringWithRange:range];
+            XCTAssertEqualObjects(matchedText, answer);
+            [result appendFormat:@"\n\trange[%zd] = %@, found = %@", idx, NSStringFromRange(range), matchedText];
+        }];
+        [result appendString:@"\n}"];
+        
+        NSLog(@"\n%@", result);
+    }];
+}
+
 @end

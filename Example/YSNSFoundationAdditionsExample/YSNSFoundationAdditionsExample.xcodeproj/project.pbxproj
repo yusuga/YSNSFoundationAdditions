@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */; };
+		B84B604D1C169558001D401D /* NSStringPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B604C1C169558001D401D /* NSStringPerformanceTests.m */; };
 		B86A1BA61B425BFE00216301 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B86A1BA51B425BFE00216301 /* NSArrayTests.m */; };
 		B883AB7B1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B883AB7A1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m */; };
 		B883AB801BEC754000EF6460 /* NSMutableAttributedStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B883AB7F1BEC754000EF6460 /* NSMutableAttributedStringTests.m */; };
@@ -50,6 +51,7 @@
 		0224D326A7156FF2252C961F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B806791818EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
+		B84B604C1C169558001D401D /* NSStringPerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPerformanceTests.m; sourceTree = "<group>"; };
 		B86A1BA51B425BFE00216301 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTests.m; sourceTree = "<group>"; };
 		B883AB791BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B883AB7A1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				B8F0F1591994F696003CF655 /* NSManagedObjectTest.m */,
 				B8933A0418D16347006925A7 /* NSObjectTest.m */,
 				B8F5320218C6F47A001769F3 /* NSStringTest.m */,
+				B84B604C1C169558001D401D /* NSStringPerformanceTests.m */,
 				B883AB7F1BEC754000EF6460 /* NSMutableAttributedStringTests.m */,
 				B86A1BA51B425BFE00216301 /* NSArrayTests.m */,
 				B8C2CE6E18B6CB5700C31CC1 /* Supporting Files */,
@@ -399,6 +402,7 @@
 				B8F5320318C6F47A001769F3 /* NSStringTest.m in Sources */,
 				B8F0F15A1994F696003CF655 /* NSManagedObjectTest.m in Sources */,
 				B8933A0518D16347006925A7 /* NSObjectTest.m in Sources */,
+				B84B604D1C169558001D401D /* NSStringPerformanceTests.m in Sources */,
 				B883AB801BEC754000EF6460 /* NSMutableAttributedStringTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,9 +551,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YSNSFoundationAdditionsExample.app/YSNSFoundationAdditionsExample";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YSNSFoundationAdditionsExample/YSNSFoundationAdditionsExample-Prefix.pch";
@@ -575,9 +578,8 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YSNSFoundationAdditionsExample.app/YSNSFoundationAdditionsExample";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YSNSFoundationAdditionsExample/YSNSFoundationAdditionsExample-Prefix.pch";
