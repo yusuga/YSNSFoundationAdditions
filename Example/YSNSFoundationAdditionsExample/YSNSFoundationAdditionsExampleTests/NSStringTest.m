@@ -256,4 +256,24 @@
     }];
 }
 
+#pragma mark - Format
+
+- (void)testClockFormattedString
+{    
+    XCTAssertEqualObjects(@"0:00", [NSString clockFormattedStringFromTime:0.]);
+    XCTAssertEqualObjects(@"0:01", [NSString clockFormattedStringFromTime:1.]);
+    XCTAssertEqualObjects(@"0:59", [NSString clockFormattedStringFromTime:59.]);
+    XCTAssertEqualObjects(@"1:00", [NSString clockFormattedStringFromTime:60.]);
+    XCTAssertEqualObjects(@"1:01", [NSString clockFormattedStringFromTime:61.]);
+    XCTAssertEqualObjects(@"9:59", [NSString clockFormattedStringFromTime:599.]);
+    XCTAssertEqualObjects(@"10:00", [NSString clockFormattedStringFromTime:600.]);
+    XCTAssertEqualObjects(@"10:01", [NSString clockFormattedStringFromTime:601.]);
+    XCTAssertEqualObjects(@"59:59", [NSString clockFormattedStringFromTime:3599.]);
+    XCTAssertEqualObjects(@"1:00:00", [NSString clockFormattedStringFromTime:3600.]);
+    XCTAssertEqualObjects(@"1:00:01", [NSString clockFormattedStringFromTime:3601.]);
+    XCTAssertEqualObjects(@"9:59:59", [NSString clockFormattedStringFromTime:35999.]);
+    XCTAssertEqualObjects(@"10:00:00", [NSString clockFormattedStringFromTime:36000.]);
+    XCTAssertEqualObjects(@"10:00:01", [NSString clockFormattedStringFromTime:36001.]);
+}
+
 @end

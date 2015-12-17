@@ -25,4 +25,7 @@
 - (NSArray<NSValue *> *)ys_findTwitterHashtagRanges;
 - (NSArray<NSValue *> *)ys_findTwitterMentionRanges;
 
+/* Format */
++ (NSString *)clockFormattedStringFromTime:(NSTimeInterval)time;
+
 @end

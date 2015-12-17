@@ -55,7 +55,7 @@
                                                                                                  kCFStringEncodingUTF8));
 }
 
-#pragma mark - 
+#pragma mark - Regular Expression
 
 /**
  *  文字列中に含まれているRFC-3986に準拠しているhttpまたhttpsのURIを全て探す。
@@ -107,7 +107,7 @@
                                           resultRangeIndex:1];
 }
 
-#pragma mark - Private
+#pragma mark - Regular Expression - Private
 
 - (NSArray<NSValue *> *)ys_findRangesWithRegularExpressionPattern:(NSString *)pattern
                                                  resultRangeIndex:(NSUInteger)resultRangeIndex
@@ -125,6 +125,22 @@
     }
     
     return [ranges copy];
+}
+
+#pragma mark - Format
+
++ (NSString *)clockFormattedStringFromTime:(NSTimeInterval)time
+{
+    if (time < 3600.) {
+        return [NSString stringWithFormat:@"%li:%02li",
+                lround(floor(time / 60.)) % 60,
+                lround(floor(time)) % 60];
+    } else {
+        return [NSString stringWithFormat:@"%li:%02li:%02li",
+                lround(floor(time / 3600.)) % 100,
+                lround(floor(time / 60.)) % 60,
+                lround(floor(time)) % 60];
+    }
 }
 
 @end
