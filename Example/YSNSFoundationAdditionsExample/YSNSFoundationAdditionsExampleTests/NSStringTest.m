@@ -259,7 +259,8 @@
 #pragma mark - Format
 
 - (void)testClockFormattedString
-{    
+{
+    XCTAssertEqualObjects(@"0:00", [NSString clockFormattedStringFromTime:-1.]);
     XCTAssertEqualObjects(@"0:00", [NSString clockFormattedStringFromTime:0.]);
     XCTAssertEqualObjects(@"0:01", [NSString clockFormattedStringFromTime:1.]);
     XCTAssertEqualObjects(@"0:59", [NSString clockFormattedStringFromTime:59.]);

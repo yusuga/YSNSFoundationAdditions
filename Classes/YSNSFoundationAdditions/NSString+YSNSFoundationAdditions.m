@@ -131,6 +131,10 @@
 
 + (NSString *)clockFormattedStringFromTime:(NSTimeInterval)time
 {
+    if (time < 0.) {
+        time = 0.;
+    }
+    
     if (time < 3600.) {
         return [NSString stringWithFormat:@"%li:%02li",
                 lround(floor(time / 60.)) % 60,
