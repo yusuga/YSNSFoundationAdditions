@@ -150,6 +150,43 @@
     test(@"URL tests. https://google.com  query: https://www.google.co.jp/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwilsdqgisrJAhVDrJQKHSiDBS4QFggoMAA&url=http%3A%2F%2Fwww.apple.com%2Fjp%2F&usg=AFQjCNEru1CMn0qABV7TjifNMEOJSUftNg escaped: https://www.google.co.jp/maps/search/%E6%9D%B1%E4%BA%AC+%E5%85%AC%E5%9C%92/@35.6852483,139.7177802,13z/data=!3m1!4b1", @[[NSValue valueWithRange:NSMakeRange(11, 18)], [NSValue valueWithRange:NSMakeRange(38, 203)], [NSValue valueWithRange:NSMakeRange(251, 116)]]);
 }
 
+- (void)testFindTweetURLRanges
+{
+    void (^test)(NSString *source, NSArray<NSValue *> *answerRanges) = ^(NSString *source, NSArray<NSValue *> *answerRanges) {
+        NSArray<NSValue *> *ranges = [source ys_findTweetURLRanges];
+        XCTAssertEqual([ranges count], [answerRanges count]);
+        
+        NSLog(@"source: %@", source);
+        [ranges enumerateObjectsUsingBlock:^(NSValue * _Nonnull rangeValue, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSRange range = [rangeValue rangeValue];
+            XCTAssertTrue(NSEqualRanges(range, [answerRanges[idx] rangeValue]), @">%zd: answerRange: %@, resultRange:%@, [%@]", idx, NSStringFromRange([answerRanges[idx] rangeValue]), NSStringFromRange(range), [source substringWithRange:range]);
+            NSLog(@">%zd: %@, [%@]", idx, NSStringFromRange(range), [source substringWithRange:range]);
+        }];
+    };
+    
+    void (^testStandardCase)(NSString *source, NSString *tweetURLStr, NSUInteger answerLocation) = ^(NSString *source, NSString *tweetURLStr, NSUInteger answerLocation) {
+        test(source, @[[NSValue valueWithRange:NSMakeRange(answerLocation, tweetURLStr.length)]]);
+    };
+    
+    test(@"", nil);
+    test(@"https://twitter.com/jack/list/20", nil);
+    
+    for (NSString *URLStr in @[@"https://twitter.com/jack/status/20",
+                               @"http://twitter.com/jack/status/20",
+                               @"https://mobile.twitter.com/jack/status/20",
+                               @"http://mobile.twitter.com/jack/status/20"])
+    {
+        testStandardCase(URLStr, URLStr, 0);
+        testStandardCase([NSString stringWithFormat:@"abc %@", URLStr], URLStr, 4);
+        testStandardCase([NSString stringWithFormat:@"%@ 4", URLStr], URLStr, 0);
+        testStandardCase([NSString stringWithFormat:@"abc %@ abc", URLStr], URLStr, 4);
+    }
+    
+    test(@"abc https://twitter.com/jack/status/20 abc http://mobile.twitter.com/jack/status/20",
+         @[[NSValue valueWithRange:NSMakeRange(4, 34)],
+           [NSValue valueWithRange:NSMakeRange(43, 40)]]);
+}
+
 - (void)testFindHashttagRanges
 {
     NSArray<NSString *> *sources = @[@"#hashtag",
