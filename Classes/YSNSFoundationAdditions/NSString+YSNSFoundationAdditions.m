@@ -86,7 +86,9 @@ static NSString * const kAllowedScreenNameCharacters = @"a-zA-Z0-9_";
  *
  *  # Example
  *  https://twitter.com/jack/status/20
+ *  http://twitter.com/jack/status/20
  *  https://mobile.twitter.com/jack/status/20
+ *  http://mobile.twitter.com/jack/status/20
  */
 - (NSArray<NSValue *> *)ys_findTweetURLRanges
 {
