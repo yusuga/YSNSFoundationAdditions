@@ -271,8 +271,11 @@
     XCTAssertEqual([sources count], [answers count]);
     
     XCTAssertEqual([[@"" ys_findTwitterMentionRanges] count], 0);
-    XCTAssertEqual([[@"@123456789012345" ys_findTwitterMentionRanges] count], 1);
-    XCTAssertEqual([[@"@1234567890123456" ys_findTwitterMentionRanges] count], 0);
+    XCTAssertEqual([[@"abc@abc" ys_findTwitterMentionRanges] count], 0); // @の前にScreenNameに有効な文字がある
+    XCTAssertEqual([[@"あ@abc" ys_findTwitterMentionRanges] count], 1); // @の前にScreenNameに無効な文字がある
+    
+    XCTAssertEqual([[@"@123456789012345" ys_findTwitterMentionRanges] count], 1); // 15文字
+    XCTAssertEqual([[@"@1234567890123456" ys_findTwitterMentionRanges] count], 1); // 16文字
     
     [sources enumerateObjectsUsingBlock:^(NSString * _Nonnull source, NSUInteger idx, BOOL * _Nonnull stop) {
         NSArray<NSValue *> *ranges = [source ys_findTwitterMentionRanges];
@@ -291,6 +294,29 @@
         
         NSLog(@"\n%@", result);
     }];
+    
+    // メンションが連続する
+    {
+        NSString *source = @"@apple @iphone";
+        NSArray<NSValue *> *ranges = [source ys_findTwitterMentionRanges];
+        XCTAssertEqual([ranges count], 2);
+        [ranges enumerateObjectsUsingBlock:^(NSValue * _Nonnull rangeValue, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString *mention = [source substringWithRange:[rangeValue rangeValue]];
+            XCTAssertGreaterThan(mention.length, 0);
+            
+            switch (idx) {
+                case 0:
+                    XCTAssertEqualObjects(mention, @"@apple");
+                    break;
+                case 1:
+                    XCTAssertEqualObjects(mention, @"@iphone");
+                    break;
+                default:
+                    abort();
+                    break;
+            }
+        }];
+    }
 }
 
 #pragma mark - Format

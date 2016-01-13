@@ -121,10 +121,13 @@ static NSString * const kAllowedScreenNameCharacters = @"a-zA-Z0-9_";
  *
  *  # Undocumented
  *  - `@`は全角も許容されている。
+ *
+ *  # Note
+ *  15文字制限があるが、twitter.comでのバリデーションは文字数判定を行なっていない。15文字制限の撤廃の可能性もないわけではないので判定では文字数制限は省いている。
  */
 - (NSArray<NSValue *> *)ys_findTwitterMentionRanges
 {
-    return [self ys_findRangesWithRegularExpressionPattern:[NSString stringWithFormat:@"(?:^|[\\W]{1})([@＠]{1}[%@]{1,15})(?:$|[^%@])+", kAllowedScreenNameCharacters, kAllowedScreenNameCharacters]
+    return [self ys_findRangesWithRegularExpressionPattern:[NSString stringWithFormat:@"(?:^|[^%@])([@＠][%@]+)", kAllowedScreenNameCharacters, kAllowedScreenNameCharacters]
                                           resultRangeIndex:1];
 }
 
@@ -133,7 +136,12 @@ static NSString * const kAllowedScreenNameCharacters = @"a-zA-Z0-9_";
 - (NSArray<NSValue *> *)ys_findRangesWithRegularExpressionPattern:(NSString *)pattern
                                                  resultRangeIndex:(NSUInteger)resultRangeIndex
 {
-    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:NULL];
+    NSError *error = nil;
+    NSRegularExpression *regexp = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+    if (error) {
+        NSLog(@"%s, error: %@", __func__, error);
+        return nil;
+    }
     NSArray<NSTextCheckingResult *> *matches = [regexp matchesInString:self options:0 range:NSMakeRange(0, self.length)];
     if (![matches count]) return nil;
     
