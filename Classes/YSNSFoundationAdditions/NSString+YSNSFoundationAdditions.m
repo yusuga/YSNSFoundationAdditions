@@ -108,7 +108,7 @@ static NSString * const kAllowedScreenNameCharacters = @"a-zA-Z0-9_";
  */
 - (NSArray<NSValue *> *)ys_findTwitterHashtagRanges
 {
-    return [self ys_findRangesWithRegularExpressionPattern:@"(?:^|[\\W]{1})([#＃]{1}[\\w]+)"
+    return [self ys_findRangesWithRegularExpressionPattern:@"(?:^|[\\W])([#＃][\\w]+)"
                                           resultRangeIndex:1];
 }
 

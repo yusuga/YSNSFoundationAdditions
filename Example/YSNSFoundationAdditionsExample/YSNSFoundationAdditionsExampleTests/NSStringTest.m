@@ -218,7 +218,9 @@
     XCTAssertEqual([sources count], [answers count]);
     
     XCTAssertEqual([[@"" ys_findTwitterHashtagRanges] count], 0);
-    
+    XCTAssertEqual([[@"a#abc" ys_findTwitterHashtagRanges] count], 0);
+    XCTAssertEqual([[@"あ#abc" ys_findTwitterHashtagRanges] count], 0);
+
     [sources enumerateObjectsUsingBlock:^(NSString * _Nonnull source, NSUInteger idx, BOOL * _Nonnull stop) {
         NSArray<NSValue *> *ranges = [source ys_findTwitterHashtagRanges];
         XCTAssertGreaterThan([ranges count], 0, @"{\n\tsource = %@\n}", source);
@@ -236,6 +238,29 @@
         
         NSLog(@"\n%@", result);
     }];
+    
+    // ハッシュタグが連続する
+    {
+        NSString *source = @"#apple #iphone";
+        NSArray<NSValue *> *ranges = [source ys_findTwitterHashtagRanges];
+        XCTAssertEqual([ranges count], 2);
+        [ranges enumerateObjectsUsingBlock:^(NSValue * _Nonnull rangeValue, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSString *hashtag = [source substringWithRange:[rangeValue rangeValue]];
+            XCTAssertGreaterThan(hashtag.length, 0);
+            
+            switch (idx) {
+                case 0:
+                    XCTAssertEqualObjects(hashtag, @"#apple");
+                    break;
+                case 1:
+                    XCTAssertEqualObjects(hashtag, @"#iphone");
+                    break;
+                default:
+                    abort();
+                    break;
+            }
+        }];
+    }
 }
 
 - (void)testFindMentionRanges
