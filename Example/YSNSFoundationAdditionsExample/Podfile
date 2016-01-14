@@ -1,3 +1,5 @@
 platform :ios, '7.0'
 pod 'NSRunLoop+PerformBlock'
-pod 'YSProcessTimer', :git => 'https://github.com/yusuga/YSProcessTimer.git'
+
+# Exmaple
+pod 'twitter-text'
