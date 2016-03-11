@@ -57,6 +57,15 @@ static NSString * const kAllowedScreenNameCharacters = @"a-zA-Z0-9_";
                                                                                                  kCFStringEncodingUTF8));
 }
 
+#pragma mark - Transform
+
+- (NSString *)ys_transformToHalfwidth
+{
+    NSMutableString *str = self.mutableCopy;
+    CFStringTransform((CFMutableStringRef)str, NULL, kCFStringTransformFullwidthHalfwidth, false);
+    return str.copy;
+}
+
 #pragma mark - Regular Expression
 
 /**

@@ -20,6 +20,9 @@
 - (NSString*)ys_escapedURLString;
 - (NSString*)ys_unescapedURLString;
 
+/* Transform */
+- (NSString *)ys_transformToHalfwidth;
+
 /* Regular Expression */
 - (NSArray<NSTextCheckingResult *> *)ys_findHTTPURIRFC3986Matches;
 - (NSArray<NSValue *> *)ys_findTweetURLRanges;

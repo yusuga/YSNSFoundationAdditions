@@ -117,6 +117,18 @@
                   @"str1: %@", [[@"" ys_escapedURLString] ys_unescapedURLString]);
 }
 
+#pragma mark - Transform
+
+- (void)testTransformToHalfwidth
+{
+    XCTAssertEqualObjects([@"カタカナ" ys_transformToHalfwidth], @"ｶﾀｶﾅ");
+    XCTAssertEqualObjects([@"混在コンザイ" ys_transformToHalfwidth], @"混在ｺﾝｻﾞｲ");
+    XCTAssertEqualObjects([@"ひらがな" ys_transformToHalfwidth], @"ひらがな");
+    XCTAssertEqualObjects([@"漢字" ys_transformToHalfwidth], @"漢字");
+    XCTAssertEqualObjects([@"abc" ys_transformToHalfwidth], @"abc");
+    XCTAssertEqualObjects([@"ａｂｃ" ys_transformToHalfwidth], @"abc");
+}
+
 #pragma mark - Regular Expression
 
 - (void)testFindHTTPURIRFC3986Matches
