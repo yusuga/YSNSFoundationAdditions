@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */; };
 		B84B604D1C169558001D401D /* NSStringPerformanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B84B604C1C169558001D401D /* NSStringPerformanceTests.m */; };
+		B856E9F51C9A940000724225 /* NSLocale+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E9F41C9A940000724225 /* NSLocale+YSNSFoundationAdditions.m */; };
+		B856E9F81C9A96E600724225 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B856E9F71C9A96E600724225 /* TableViewController.m */; };
 		B86A1BA61B425BFE00216301 /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B86A1BA51B425BFE00216301 /* NSArrayTests.m */; };
 		B883AB7B1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B883AB7A1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m */; };
 		B883AB801BEC754000EF6460 /* NSMutableAttributedStringTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B883AB7F1BEC754000EF6460 /* NSMutableAttributedStringTests.m */; };
@@ -21,7 +23,6 @@
 		B8C2CE5518B6CB5700C31CC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE5418B6CB5700C31CC1 /* main.m */; };
 		B8C2CE5918B6CB5700C31CC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE5818B6CB5700C31CC1 /* AppDelegate.m */; };
 		B8C2CE5C18B6CB5700C31CC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C2CE5A18B6CB5700C31CC1 /* Main.storyboard */; };
-		B8C2CE5F18B6CB5700C31CC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C2CE5E18B6CB5700C31CC1 /* ViewController.m */; };
 		B8C2CE6118B6CB5700C31CC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C2CE6018B6CB5700C31CC1 /* Images.xcassets */; };
 		B8C2CE6818B6CB5700C31CC1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C2CE6718B6CB5700C31CC1 /* XCTest.framework */; };
 		B8C2CE6918B6CB5700C31CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C2CE4818B6CB5700C31CC1 /* Foundation.framework */; };
@@ -52,6 +53,10 @@
 		B806791818EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B806791918EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
 		B84B604C1C169558001D401D /* NSStringPerformanceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringPerformanceTests.m; sourceTree = "<group>"; };
+		B856E9F31C9A940000724225 /* NSLocale+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLocale+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
+		B856E9F41C9A940000724225 /* NSLocale+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLocale+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
+		B856E9F61C9A96E600724225 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		B856E9F71C9A96E600724225 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		B86A1BA51B425BFE00216301 /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTests.m; sourceTree = "<group>"; };
 		B883AB791BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+YSNSFoundationAdditions.h"; sourceTree = "<group>"; };
 		B883AB7A1BEC6C3400EF6460 /* NSMutableAttributedString+YSNSFoundationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+YSNSFoundationAdditions.m"; sourceTree = "<group>"; };
@@ -70,8 +75,6 @@
 		B8C2CE5718B6CB5700C31CC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B8C2CE5818B6CB5700C31CC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B8C2CE5B18B6CB5700C31CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B8C2CE5D18B6CB5700C31CC1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B8C2CE5E18B6CB5700C31CC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B8C2CE6018B6CB5700C31CC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B8C2CE6618B6CB5700C31CC1 /* YSNSFoundationAdditionsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YSNSFoundationAdditionsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C2CE6718B6CB5700C31CC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -166,8 +169,8 @@
 				B8C2CE5718B6CB5700C31CC1 /* AppDelegate.h */,
 				B8C2CE5818B6CB5700C31CC1 /* AppDelegate.m */,
 				B8C2CE5A18B6CB5700C31CC1 /* Main.storyboard */,
-				B8C2CE5D18B6CB5700C31CC1 /* ViewController.h */,
-				B8C2CE5E18B6CB5700C31CC1 /* ViewController.m */,
+				B856E9F61C9A96E600724225 /* TableViewController.h */,
+				B856E9F71C9A96E600724225 /* TableViewController.m */,
 				B8F0F1561994F64E003CF655 /* Tweet.h */,
 				B8F0F1571994F64E003CF655 /* Tweet.m */,
 				B8C2CE6018B6CB5700C31CC1 /* Images.xcassets */,
@@ -227,6 +230,8 @@
 				B8933A0218D16245006925A7 /* NSObject+YSNSFoundationAdditions.m */,
 				B8F0F1531994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.h */,
 				B8F0F1541994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.m */,
+				B856E9F31C9A940000724225 /* NSLocale+YSNSFoundationAdditions.h */,
+				B856E9F41C9A940000724225 /* NSLocale+YSNSFoundationAdditions.m */,
 			);
 			name = YSNSFoundationAdditions;
 			path = ../../Classes/YSNSFoundationAdditions;
@@ -380,7 +385,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C2CE5F18B6CB5700C31CC1 /* ViewController.m in Sources */,
 				B8933A0318D16245006925A7 /* NSObject+YSNSFoundationAdditions.m in Sources */,
 				B8F5320118C6F350001769F3 /* NSString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8018B6CB8F00C31CC1 /* NSArray+YSNSFoundationAdditions.m in Sources */,
@@ -388,6 +392,8 @@
 				B806791A18EE9712003C47D0 /* NSMutableString+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE8918B6D39000C31CC1 /* NSDictionary+YSNSFoundationAdditions.m in Sources */,
 				B8C2CE5918B6CB5700C31CC1 /* AppDelegate.m in Sources */,
+				B856E9F81C9A96E600724225 /* TableViewController.m in Sources */,
+				B856E9F51C9A940000724225 /* NSLocale+YSNSFoundationAdditions.m in Sources */,
 				B8F0F1581994F64E003CF655 /* Tweet.m in Sources */,
 				B8C2CE5518B6CB5700C31CC1 /* main.m in Sources */,
 				B8F0F1551994F536003CF655 /* NSManagedObject+YSNSFoundationAdditions.m in Sources */,
