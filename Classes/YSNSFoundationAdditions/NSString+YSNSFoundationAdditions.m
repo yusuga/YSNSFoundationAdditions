@@ -66,6 +66,40 @@ static NSString * const kAllowedScreenNameCharacters = @"a-zA-Z0-9_";
     return str.copy;
 }
 
+#pragma mark - Substring
+
+- (NSString *)ys_writingSubstringWithBoundingSize:(CGSize)size
+                                             font:(UIFont *)font
+{
+    NSParameterAssert(size.width);
+    NSParameterAssert(font);
+    
+    return [self ys_calculateWritingSubstringWithBoundingSize:size
+                                                         font:font];
+}
+
+- (NSString *)ys_calculateWritingSubstringWithBoundingSize:(CGSize)size
+                                                      font:(UIFont *)font
+{
+    if ([self ys_validateStringWithBoundingSize:size font:font]) {
+        return self;
+    }
+    if (self.length == 0) {
+        return @"";
+    }
+    return [[self substringToIndex:self.length - 1] ys_calculateWritingSubstringWithBoundingSize:size
+                                                                                            font:font];
+}
+
+- (BOOL)ys_validateStringWithBoundingSize:(CGSize)size
+                                     font:(UIFont *)font
+{
+    return [self boundingRectWithSize:size
+                              options:0
+                           attributes:@{NSFontAttributeName : font}
+                              context:nil].size.width < size.width;
+}
+
 #pragma mark - Regular Expression
 
 /**

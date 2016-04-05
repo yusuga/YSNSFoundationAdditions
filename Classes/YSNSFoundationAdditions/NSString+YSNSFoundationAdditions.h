@@ -20,6 +20,14 @@
 - (NSString*)ys_escapedURLString;
 - (NSString*)ys_unescapedURLString;
 
+/* Substring */
+- (NSString *)ys_writingSubstringWithBoundingSize:(CGSize)size
+                                             font:(UIFont *)font;
+- (NSString *)ys_calculateWritingSubstringWithBoundingSize:(CGSize)size
+                                                      font:(UIFont *)font;
+- (BOOL)ys_validateStringWithBoundingSize:(CGSize)size
+                                     font:(UIFont *)font;
+
 /* Transform */
 - (NSString *)ys_transformToHalfwidth;
 
