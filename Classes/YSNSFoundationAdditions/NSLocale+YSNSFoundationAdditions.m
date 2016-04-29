@@ -29,4 +29,27 @@
     return [names copy];
 }
 
++ (BOOL)ys_isRightToLeftLanguage:(NSString *)ISO639_1Code
+{
+    if (!ISO639_1Code) return NO;
+    else if ([ISO639_1Code isEqualToString:@"ar"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"arc"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"bcc"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"bqi"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"ckb"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"dv"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"fa"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"glk"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"he"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"lrc"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"mzn"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"pnb"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"ps"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"sd"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"ug"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"ur"]) return YES;
+    else if ([ISO639_1Code isEqualToString:@"yi"]) return YES;
+    
+    return  NO;}
+
 @end

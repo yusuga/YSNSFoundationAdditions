@@ -16,4 +16,13 @@
 + (NSArray<NSString *> *)ys_availableISO639_1LocaleIdentifiers;
 + (NSArray<NSString *> *)ys_displayNamesWithLocaleIdentifiers:(NSArray<NSString *> *)localeIDs;
 
+/**
+ *  RTL Wikipedia languages
+ *  https://en.wikipedia.org/wiki/Right-to-left#RTL_Wikipedia_languages
+ *
+ *  ISO639_1Codes
+ *  https://ja.wikipedia.org/wiki/ISO_639-1%E3%82%B3%E3%83%BC%E3%83%89%E4%B8%80%E8%A6%A7
+ */
++ (BOOL)ys_isRightToLeftLanguage:(NSString *)ISO639_1Code;
+
 @end
