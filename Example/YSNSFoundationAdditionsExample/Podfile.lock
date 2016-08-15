@@ -1,6 +1,6 @@
 PODS:
   - NSRunLoop+PerformBlock (0.2.0)
-  - twitter-text (1.13.0)
+  - twitter-text (1.14.0)
 
 DEPENDENCIES:
   - NSRunLoop+PerformBlock
@@ -8,6 +8,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   NSRunLoop+PerformBlock: 7ff5674d72dc5da5d31aeb1901286ae126684896
-  twitter-text: 60d0816a5b1ae7331bdda54ba15f0da974286177
+  twitter-text: 703e84901722b7e6e2e22b7ac12afabfb40be1e5
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: f3618d13e49d821985d5a1daa6a3ddd2defac9d4
+
+COCOAPODS: 1.0.1

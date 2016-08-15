@@ -1,5 +1,14 @@
-platform :ios, '7.0'
-pod 'NSRunLoop+PerformBlock'
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
 
-# Exmaple
-pod 'twitter-text'
+target 'YSNSFoundationAdditionsExample' do
+  # Example
+  pod 'NSRunLoop+PerformBlock'
+  pod 'twitter-text'
+
+  target 'YSNSFoundationAdditionsExampleTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
