@@ -132,10 +132,14 @@ static NSString * const kAllowedScreenNameCharacters = @"a-zA-Z0-9_";
  *  http://twitter.com/jack/status/20
  *  https://mobile.twitter.com/jack/status/20
  *  http://mobile.twitter.com/jack/status/20
+ *
+ *  # Ignore
+ *  https://twitter.com/TheEllenShow/status/440322224407314432/photo/1
  */
 - (NSArray<NSValue *> *)ys_findTweetURLRanges
 {
-    NSString *pattern = [NSString stringWithFormat:@"https?://(?:mobile.|)twitter.com/[%@]+/status/[0-9]+", kAllowedScreenNameCharacters];
+    NSString *basePattern = [NSString stringWithFormat:@"https?://(?:mobile.|)twitter.com/[%@]+/status/[0-9]+", kAllowedScreenNameCharacters];
+    NSString *pattern = [NSString stringWithFormat:@"(?!%@/[\\w])%@/?", basePattern, basePattern];
     return [self ys_findRangesWithRegularExpressionPattern:pattern
                                           resultRangeIndex:0];
 }

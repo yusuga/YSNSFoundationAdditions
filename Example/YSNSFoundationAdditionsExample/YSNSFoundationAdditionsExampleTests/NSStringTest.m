@@ -186,7 +186,9 @@
     for (NSString *URLStr in @[@"https://twitter.com/jack/status/20",
                                @"http://twitter.com/jack/status/20",
                                @"https://mobile.twitter.com/jack/status/20",
-                               @"http://mobile.twitter.com/jack/status/20"])
+                               @"http://mobile.twitter.com/jack/status/20",
+                               @"https://twitter.com/jack/status/20/",
+                               @"http://twitter.com/jack/status/20/",])
     {
         testStandardCase(URLStr, URLStr, 0);
         testStandardCase([NSString stringWithFormat:@"abc %@", URLStr], URLStr, 4);
@@ -197,6 +199,21 @@
     test(@"abc https://twitter.com/jack/status/20 abc http://mobile.twitter.com/jack/status/20",
          @[[NSValue valueWithRange:NSMakeRange(4, 34)],
            [NSValue valueWithRange:NSMakeRange(43, 40)]]);
+}
+
+- (void)testFindTweetURLRangesWithIgnoreURL
+{
+    XCTAssertEqual([[@"https://twitter.com/jack/status/20" ys_findTweetURLRanges] count], 1);
+    XCTAssertEqual([[@"abc https://twitter.com/jack/status/20 https://twitter.com/jack/status/20" ys_findTweetURLRanges] count], 2);
+    
+    NSArray *sources = @[@"https://twitter.com/TheEllenShow/status/440322224407314432/photo/1",
+                         @"https://twitter.com/TheEllenShow/status/440322224407314432/photo/1 222",
+                         @"111 https://twitter.com/TheEllenShow/status/440322224407314432/photo/1",
+                         @"111 https://twitter.com/TheEllenShow/status/440322224407314432/photo/1 222"];
+    
+    for (NSString *source in sources) {
+        XCTAssertNil([source ys_findTweetURLRanges]);
+    }
 }
 
 - (void)testFindHashttagRanges
